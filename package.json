@@ -1,0 +1,29 @@
+{
+  "dependencies": {
+    "@f/create-action": "^1.1.1",
+    "@f/event-handler": "1.0.2",
+    "@f/handle-actions": "^1.1.2",
+    "vdux": "2"
+  },
+  "devDependencies": {
+    "@f/domready": "^1.0.2",
+    "babel-cli": "^6.23.0",
+    "babel-loader": "^6.3.2",
+    "babel-plugin-transform-react-jsx": "^6.23.0",
+    "babel-preset-es2015": "^6.22.0",
+    "babel-preset-stage-0": "^6.22.0",
+    "redux-flo": "^2.3.0",
+    "webpack": "^2.2.1",
+    "webpack-dev-server": "^2.4.1"
+  },
+  "name": "vdux-virtual-list",
+  "version": "0.1.1",
+  "description": "Virtual list component for vdux.",
+  "main": "lib/index.js",
+  "repository": "https://github.com/danleavitt0/vdux-virtual-list.git",
+  "author": "danleavitt0 <danleavitt0@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "demo": "babel src --out-dir lib --watch & webpack-dev-server --config demo/webpack.config.babel.js  --contentBase demo/src --hot --inline -d"
+  }
+}
