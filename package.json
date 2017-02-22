@@ -19,7 +19,7 @@
   "name": "vdux-virtual-list",
   "version": "0.1.1",
   "description": "Virtual list component for vdux.",
-  "main": "lib/index.js",
+  "main": "lib/VirtualList.js",
   "repository": "https://github.com/danleavitt0/vdux-virtual-list.git",
   "author": "danleavitt0 <danleavitt0@gmail.com>",
   "license": "MIT",
