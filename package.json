@@ -17,7 +17,7 @@
     "webpack-dev-server": "^2.4.1"
   },
   "name": "vdux-virtual-list",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "Virtual list component for vdux.",
   "main": "lib/VirtualList.js",
   "repository": "https://github.com/danleavitt0/vdux-virtual-list.git",
