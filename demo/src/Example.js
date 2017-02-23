@@ -2,7 +2,6 @@ import VirtualList from '../../src/VirtualList'
 import element from 'vdux/element'
 
 const Example = (MyList) => {
-  console.log(VirtualList({container: window}))
   return {
     render () {
       const itemHeight = 50
@@ -11,7 +10,7 @@ const Example = (MyList) => {
       for (let i = 0; i < 2000; i++) {
         items.push({text: i})
       }
-      const MyVirtualList = VirtualList({container: window})(MyList)
+      const MyVirtualList = VirtualList({container: window})
       return (
         <div>
 					start of list
@@ -19,6 +18,7 @@ const Example = (MyList) => {
   <MyVirtualList
     itemHeight={itemHeight}
     itemBuffer={itemBuffer}
+    InnerComponent={MyList}
     items={items} />
 					</div>
         </div>

@@ -24,6 +24,7 @@
   "author": "danleavitt0 <danleavitt0@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "demo": "babel src --out-dir lib --watch & webpack-dev-server --config demo/webpack.config.babel.js  --contentBase demo/src --hot --inline -d"
+    "demo": "babel src --out-dir lib --watch & webpack-dev-server --config demo/webpack.config.babel.js  --contentBase demo/src --hot --inline -d",
+    "build": "babel src --out-dir lib"
   }
 }

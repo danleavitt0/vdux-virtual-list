@@ -7,7 +7,7 @@ import Window from 'vdux/Window'
 
 const setNewBounds = createAction('<VirtualList/>: SET_NEW_BOUNDS')
 
-const VirtualList = (options) => (InnerComponent) => {
+const VirtualList = (options) => {
   return {
     initialState ({props, local}) {
       return {
@@ -42,7 +42,7 @@ const VirtualList = (options) => (InnerComponent) => {
 
     render ({props, state}) {
       const { firstItemIndex, lastItemIndex } = state
-      const { items, itemHeight } = props
+      const { items, itemHeight, InnerComponent } = props
 
       const visibleItems = lastItemIndex > -1 ? items.slice(firstItemIndex, lastItemIndex + 1) : []
 
@@ -64,7 +64,7 @@ const VirtualList = (options) => (InnerComponent) => {
       }
 
       return (
-        <Window id='test123' onScroll={refreshState} onResize={refreshState}>
+        <Window onScroll={refreshState} onResize={refreshState}>
           <div id='virtual-list-container'>
             <InnerComponent
               virtual={virtual}
