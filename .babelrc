@@ -1,6 +1,7 @@
 {
   "presets": ["es2015", "stage-2"],
   "plugins": [
+  	"regenerator-runtime"
     ["transform-react-jsx", {"pragma": "element"}]
   ]
 }
