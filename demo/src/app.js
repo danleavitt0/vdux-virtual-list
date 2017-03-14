@@ -1,4 +1,4 @@
-import element from 'vdux/element'
+import {component, element} from 'vdux'
 import Example from './Example'
 
 const MyList = ({
@@ -6,17 +6,17 @@ const MyList = ({
 }) => (
   <ul style={{...props.virtual.style, boxSizing: 'border-box'}}>
     {props.virtual.items.map((item, i) => (
-      <li onClick={(e) => console.log(e)} style={{display: 'block', height: 50}}>Test {item.text}</li>
+      <li style={{display: 'block', height: 50}}>Test {item.text}</li>
 		))}
   </ul>
 )
 
 const ConfiguredExample = Example(MyList)
 
-function render ({props}) {
-  return (
-    <div><ConfiguredExample /></div>
-  )
-}
-
-export default render
+export default component({
+	render ({props}) {
+	  return (
+	    <div><ConfiguredExample /></div>
+	  )
+	}
+})

@@ -1,8 +1,7 @@
 import VirtualList from '../../src/VirtualList'
-import element from 'vdux/element'
+import {component, element} from 'vdux'
 
-const Example = (MyList) => {
-  return {
+export default (MyList) => component({
     render () {
       const itemHeight = 50
       const itemBuffer = 50
@@ -14,17 +13,14 @@ const Example = (MyList) => {
       return (
         <div>
 					start of list
-					<div>
-  <MyVirtualList
-    itemHeight={itemHeight}
-    itemBuffer={itemBuffer}
-    InnerComponent={MyList}
-    items={items} />
+  				<div>
+            <MyVirtualList
+              itemHeight={itemHeight}
+              itemBuffer={itemBuffer}
+              InnerComponent={MyList}
+              items={items} />
 					</div>
         </div>
       )
     }
-  }
-}
-
-export default Example
+})

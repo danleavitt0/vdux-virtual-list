@@ -3,31 +3,20 @@
  */
 
 import 'regenerator-runtime/runtime'
-import domready from '@f/domready'
-import flow from 'redux-flo'
 import vdux from 'vdux/dom'
+import {element} from 'vdux'
+import App from './app'
 
-var app = require('./app').default
+/**
+ * Hot module replacement
+ */
 
-const initialState = {}
-
-const {subscribe, render, replaceReducer} = vdux({
-  reducer: (state) => state,
-  initialState,
-  middleware: [
-    flow()
-  ]
-})
-
-domready(() => {
-  subscribe((state) => {
-    return render(app(state))
-  })
-})
+const {forceRerender} = vdux(() => <App />)
 
 if (module.hot) {
   module.hot.accept(['./app'], () => {
-    replaceReducer((state) => state)
-    app = require('./app').default
+    require('./app').default
+    forceRerender()
   })
 }
+
